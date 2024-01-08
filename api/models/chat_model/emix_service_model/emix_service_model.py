@@ -71,10 +71,7 @@ class EmixServiceChat:
 
         print("*** load emix index ***")
         # define LLM
-        firstInit = FirstInit()
-        My_Api_Key=str(firstInit.get_api_key())
-        op =OpenAI(api_key=My_Api_Key)
-        # print("open EMIX LLAMA", op)
+
 
         # define service context & storage_context
         service_context = ServiceContext.from_defaults(llm = OpenAI())
