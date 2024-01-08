@@ -22,6 +22,6 @@ def chat_with_emix(question: str):
     except Exception as e:
         print(f"error in chat_with_emix {e}")
         return make_response(jsonify({
-            "message": "A problem occurred during the chat process !!!",
+            "message": "A problem occurred during the chat process ,{}.".format(str(e)),
             "success": False,
         })), 500
