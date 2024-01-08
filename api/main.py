@@ -13,7 +13,7 @@ from importlib.metadata import version, PackageNotFoundError
 
 firstInit = FirstInit()
 
-os.environ["OPENAI_API_KEY"] = str(firstInit.get_api_key())
+# os.environ["OPENAI_API_KEY"] = str(firstInit.get_api_key())
 os.environ.get('OPENAI_API_KEY')
 app = Flask(__name__)
 app.debug = True
