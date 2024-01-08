@@ -39,12 +39,9 @@ class TrainIndexModel:
     def construct_index(self, directory_path, with_sitemap: bool):
         # define service context & storage_context
         
-        firstInit = FirstInit()
-        My_Api_Key=str(firstInit.get_api_key())
-        # mys = openai.api_key = str(firstInit.get_api_key())
-        print("open EMIX train lang ",My_Api_Key)
 
-        service_context = ServiceContext.from_defaults(llm=OpenAI(openai_api_key=My_Api_Key))
+
+        service_context = ServiceContext.from_defaults(llm=OpenAI())
 
         storage_context = StorageContext.from_defaults()
         documents = SimpleDirectoryReader(directory_path).load_data()
