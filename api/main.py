@@ -21,28 +21,7 @@ CORS(app)
 app_routes(app)
 
 
-def check_packages():
-    packages_to_check = ["langchain==0.0.0", "llama_index==0.9.11", "flask==2.3.2", "flask_cors==3.0.10","pandas"]
-    results = {}
 
-    for package in packages_to_check:
-        package_name, _, desired_version = package.partition("==")
-
-        try:
-            installed_version = version(package_name)
-            if installed_version == desired_version:
-                results[package] = "installed"
-            else:
-                results[package] = f"installed, but version {installed_version} instead of {desired_version}"
-        except PackageNotFoundError:
-            results[package] = "not installed"
-
-    return results
-
-@app.route('/check_packages', methods=['GET'])
-def route_check_packages():
-    results = check_packages()
-    return jsonify(results)
 
 @app.route("/")
 def hello_world():
